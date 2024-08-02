@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Parisienne|Quicksand&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-image: linear-gradient(to bottom right, rgb(235, 76, 171), rgb(227, 77, 171), rgb(218, 78, 170), rgb(210, 80, 170), rgb(202, 81, 170), rgb(193, 82, 170), rgb(185, 83, 169), rgb(176, 84, 169), rgb(168, 85, 169), rgb(160, 87, 169), rgb(151, 88, 168), rgb(143, 89, 168));
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+.lead { 
+    font-family: 'Quicksand'; 
+}
+
+.header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.header-bar .logo {
+    font-family: 'Parisienne', cursive;
+    font-size: 2em;
+    color: #fffc;
+    cursor: default;
+    user-select: none;
+}
+
+.header-bar .nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-bar .nav-menu li {
+    margin-left: 20px;
+    padding: 10px 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1em;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s linear, box-shadow 0.3s linear;
+    user-select: none;
+}
+
+.header-bar .nav-menu li:hover {
+    color: #faa;
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.15) inset;
+}
+
+@media (max-width: 768px) {
+    .header-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .header-bar .nav-menu {
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+
+    .header-bar .nav-menu li {
+        margin-left: 0;
+        padding: 5px 10px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-bar .logo {
+        font-size: 1.5em;
+    }
+
+    .header-bar .nav-menu li {
+        font-size: 0.9em;
+    }
+}
