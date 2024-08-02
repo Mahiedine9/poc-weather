@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
-import { Weather } from './view/Weather';
+import Header from './view/Header';
+import Weather from './view/Weather';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
-      <body>
-        <Weather></Weather>
-      </body>
+      <Header />
+      <main>
+        <Weather/>
+      </main>
     </div>
   );
 }
