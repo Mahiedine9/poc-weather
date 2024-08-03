@@ -2,7 +2,6 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './WeatherCard.css';
 
-
 interface WeatherCardProps {
   heading: string;
   location: string;
@@ -11,13 +10,15 @@ interface WeatherCardProps {
   forecast: { date: string; condition: string; temp: number }[];
 }
 
-const WeatherCard: React.FC<WeatherCardProps> = ({ heading, location, temperature, weatherCondition, forecast }) => {
+const WeatherCard: React.FC<WeatherCardProps> = ({ heading, location, temperature,weatherCondition, forecast }) => {
+
+  const weatherClass = weatherCondition.toLowerCase();
+
   return (
-    <div className={`weather-card ${weatherCondition.toLowerCase()}`}>
+    <div className={`weather-card ${weatherClass}`}>
       <div className="top">
         <div className="wrapper">
           <div className="mynav">
-            <a href="#"><span className="lnr lnr-chevron-left"></span></a>
             <a href="#"><span className="lnr lnr-cog"></span></a>
           </div>
           <h1 className="heading">{heading}</h1>

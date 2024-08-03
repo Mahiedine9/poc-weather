@@ -62,7 +62,7 @@ const Weather: React.FC = () => {
             const parsedCoords = JSON.parse(cachedCoords);
             const currentTime = new Date().getTime();
             const cacheTime = parsedWeather.timestamp;
-            const cacheDuration = 10 * 60 * 1000; // 10 minutes
+            const cacheDuration = 10 * 60 * 1000; 
 
             if (currentTime - cacheTime < cacheDuration &&
                 parsedCoords.lat === coords?.lat && parsedCoords.lon === coords?.lon) {
@@ -87,7 +87,6 @@ const Weather: React.FC = () => {
                         units: 'metric',
                     }
                 });
-
                 const weatherData = { data: response.data, timestamp: new Date().getTime() };
                 localStorage.setItem('weatherData', JSON.stringify(weatherData));
                 localStorage.setItem('coords', JSON.stringify(coords));

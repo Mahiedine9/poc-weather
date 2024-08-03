@@ -248,3 +248,34 @@
     font-size: 18px;
   }
 }
+
+.weather-card.sunny .top {
+  background: url("https://images.unsplash.com/photo-1478835521858-e4f4d75d14f5?fit=crop&w=800&h=600") no-repeat center center;
+  background-size: cover;
+}
+
+
+.weather-card.clouds .top {
+  background: url("../assets/cloudy.avif") no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.weather-card.rain .top {
+  background: url("../assets/rainy.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.weather-card.snow .top {
+  background: url("../assets/snow.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.weather-card.clear .top {
+  background: url("../assets/clear.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
