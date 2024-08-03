@@ -1,46 +1,83 @@
-# Getting Started with Create React App
+# Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a weather application built with React and TypeScript that displays the weather based on the user's geographic location using the OpenWeatherMap API. It includes caching to limit the number of API requests and handles device location changes. The application is responsive and works on both PC and smartphones.
 
-## Available Scripts
+## Developer 
 
-In the project directory, you can run:
+ - Mahiedine Ferdjoukh
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Displays current weather based on user's geographic location.
+- Caching of weather data to limit API requests.
+- Responsive design for both PC and smartphones.
+- Handles device location changes.
+- Displays day/night specific styles based on the time of day.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Stack
 
-### `npm test`
+- React
+- TypeScript
+- Axios for API requests
+- Bootstrap for responsive design
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+Follow these instructions to get a copy of the project up and running on your local machine.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js and npm installed on your machine.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation
 
-### `npm run eject`
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/poc-weather.git
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. Navigate to the project directory:
+    ```bash
+    cd poc-weather
+    ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. Start the development server:
+    ```bash
+    npm start
+    ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    The application will open in your default web browser at [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- The application will prompt the user for location access.
+- Based on the user's geographic location, it will fetch and display the current weather.
+- Weather data is cached to limit the number of API requests.
+- The UI will adjust to different screen sizes, providing a good experience on both PCs and smartphones.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Structure
+
+- `src/view/Weather.tsx`: Main component for fetching and displaying weather data.
+- `src/view/WeatherCard.tsx`: Component for displaying weather details in a card format.
+- `src/view/Header.tsx`: Component for the application header.
+- `src/view/Footer.tsx`: Component for the application footer.
+- `src/App.tsx`: Main application component that sets up routes and layout.
+- `src/index.tsx`: Entry point for the React application.
+- `public`: Public directory containing the HTML template.
+
+## API
+
+This project uses the OpenWeatherMap API to fetch weather data.
+
+## Configuration
+
+Make sure to replace the API key in `Weather.tsx` with your own OpenWeatherMap API key:
+```typescript
+const API_KEY = "your-api-key-here";
+
+
