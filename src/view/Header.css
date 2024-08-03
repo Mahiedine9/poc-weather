@@ -77,12 +77,25 @@ html, body {
         margin-top: 10px;
     }
 
+
     .header-bar .nav-menu li {
         margin-left: 0;
         padding: 5px 10px;
         text-align: center;
     }
 }
+
+.header-bar .nav-menu a {
+    text-decoration: none;
+    color: inherit; 
+    transition: color 0.3s linear, box-shadow 0.3s linear;
+}
+
+.header-bar .nav-menu a:hover {
+    color: #faa;
+}
+
+
 
 @media (max-width: 480px) {
     .header-bar .logo {
