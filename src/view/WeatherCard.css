@@ -249,33 +249,49 @@
   }
 }
 
-.weather-card.sunny .top {
-  background: url("https://images.unsplash.com/photo-1478835521858-e4f4d75d14f5?fit=crop&w=800&h=600") no-repeat center center;
-  background-size: cover;
-}
-
-
-.weather-card.clouds .top {
+.weather-card.clouds.daytime .top {
   background: url("../assets/cloudy.avif") no-repeat;
   background-size: cover;
   background-position: center center;
 }
 
-.weather-card.rain .top {
+.weather-card.clouds.nighttime .top {
+  background: url("../assets/night-cloudy.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.weather-card.rain.daytime .top {
   background: url("../assets/rainy.jpg") no-repeat;
   background-size: cover;
   background-position: center center;
 }
 
-.weather-card.snow .top {
+.weather-card.rain.nighttime .top {
+  background: url("../assets/night-rainy.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.weather-card.snow.daytime .top {
   background: url("../assets/snow.jpg") no-repeat;
   background-size: cover;
   background-position: center center;
 }
 
-.weather-card.clear .top {
-  background: url("../assets/clear.jpg") no-repeat;
+.weather-card.snow.nighttime .top {
+  background: url("../assets/snow.jpg") no-repeat;
   background-size: cover;
   background-position: center center;
+}
+
+.weather-card.clear.daytime .top{
+  background: url('../assets/clear.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.weather-card.clear.nighttime .top{
+  background: url('../assets/night-clear.avif') no-repeat center center;
+  background-size: cover;
 }
 
