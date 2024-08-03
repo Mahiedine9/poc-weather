@@ -2,7 +2,7 @@ import React from 'react';
 import './Contacts.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 function Contacts() {
   return (
@@ -24,7 +24,7 @@ function Contacts() {
         <ul className="social-icons">
           <li>
             <a href="https://www.linkedin.com/in/mahiedineferdjoukh">
-              <FontAwesomeIcon icon={faLinkedin} />
+              <FontAwesomeIcon icon={faLinkedinIn} />
             </a>
           </li>
         </ul>

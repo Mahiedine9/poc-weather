@@ -146,7 +146,7 @@
     transform: scale(1);
     -ms-transform: scale(1);
     -webkit-transform: scale(1);
-    content: " ";
+    /* content: " "; */
     width: 45px;
     height: 45px;
     border-radius: 100%;
