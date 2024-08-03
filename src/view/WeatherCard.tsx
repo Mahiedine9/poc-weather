@@ -8,16 +8,35 @@ interface WeatherCardProps {
   temperature: number;
   weatherCondition: string;
   isDaytime: boolean;
-  forecast: { date: string; condition: string; temp: number }[];
+  feelsLike: number;
+  humidity: number;
+  pressure: number;
+  windSpeed: number;
+  sunrise: number;
+  sunset: number;
 }
 
-const WeatherCard: React.FC<WeatherCardProps> = ({ heading, location, temperature, weatherCondition, isDaytime, forecast }) => {
-
+const WeatherCard: React.FC<WeatherCardProps> = ({
+  heading,
+  location,
+  temperature,
+  weatherCondition,
+  isDaytime,
+  feelsLike,
+  humidity,
+  pressure,
+  windSpeed,
+  sunrise,
+  sunset,
+}) => {
   const weatherClass = weatherCondition.toLowerCase();
-  const timeClass = isDaytime ? 'daytime' : 'nighttime';
+
+  const formatTime = (timestamp: number) => {
+    return new Date(timestamp * 1000).toLocaleTimeString();
+  };
 
   return (
-    <div className={`weather-card ${weatherClass} ${timeClass}`}>
+    <div className={`weather-card ${weatherClass} ${isDaytime ? 'daytime' : 'nighttime'}`}>
       <div className="top">
         <div className="wrapper">
           <div className="mynav">
@@ -35,15 +54,30 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ heading, location, temperatur
       <div className="bottom">
         <div className="wrapper">
           <ul className="forecast">
-            <a href="#"><span className="lnr lnr-chevron-up go-up"></span></a>
-            {forecast.map((day, index) => (
-              <li key={index} className={index === 0 ? 'active' : ''}>
-                <span className="date">{day.date}</span>
-                <span className={`lnr lnr-${day.condition.toLowerCase()} condition`}>
-                  <span className="temp">{day.temp}<span className="deg">°</span><span className="temp-type">C</span></span>
-                </span>
-              </li>
-            ))}
+            <li>
+              <span className="label">Feels Like:</span>
+              <span className="value">{feelsLike}°C</span>
+            </li>
+            <li>
+              <span className="label">Humidity:</span>
+              <span className="value">{humidity}%</span>
+            </li>
+            <li>
+              <span className="label">Pressure:</span>
+              <span className="value">{pressure} hPa</span>
+            </li>
+            <li>
+              <span className="label">Wind Speed:</span>
+              <span className="value">{windSpeed} m/s</span>
+            </li>
+            <li>
+              <span className="label">Sunrise:</span>
+              <span className="value">{formatTime(sunrise)}</span>
+            </li>
+            <li>
+              <span className="label">Sunset:</span>
+              <span className="value">{formatTime(sunset)}</span>
+            </li>
           </ul>
         </div>
       </div>
