@@ -97,6 +97,11 @@ const Weather: React.FC = () => {
         }
     };
 
+    const isDaytime = (sunrise: number, sunset: number) => {
+        const now = new Date().getTime() / 1000;
+        return now > sunrise && now < sunset;
+    };
+
     return (
         <div className="container">
             <div className="row">
@@ -107,7 +112,8 @@ const Weather: React.FC = () => {
                             location={weather.name}
                             temperature={weather.main.temp}
                             weatherCondition={weather.weather[0].main}
-                            forecast={[{
+                            isDaytime={isDaytime(weather.sys.sunrise, weather.sys.sunset)}
+                            forecast={[{          // The API with the current URL does not allow retrieving the temperature based on the date, so this option is currently static.
                                 date: 'Tomorrow',
                                 condition: 'Sunny', 
                                 temp: weather.main.temp 

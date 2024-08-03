@@ -4,19 +4,21 @@ import Header from './view/Header';
 import Weather from './view/Weather';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Contacts from './view/Contacts';
+import Footer from './view/Footer';
 
 function App() {
   return (
     <Router>
-    <div className="App">
-      <Header />
-      <main>
-      <Routes>
+      <div className="App d-flex flex-column min-vh-100">
+        <Header />
+        <main className="flex-grow-1">
+          <Routes>
             <Route path='/contacts' element={<Contacts />} />
             <Route path="/" element={<Weather />} />
-      </Routes>
-      </main>
-    </div>
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }
