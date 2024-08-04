@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getWeatherByCoords, getWeatherByCityName } from '../services/WeatherService'; 
 import WeatherCard from './WeatherCard';
+import './Loader.css'
 
 const Weather: React.FC = () => {
   const [coords, setCoords] = useState<{ lat: number, lon: number } | null>(null);
@@ -78,7 +79,7 @@ const Weather: React.FC = () => {
             />
           </div>
         ) : (
-          <div>Loading...</div>
+          <div className="water"></div>
         )}
       </div>
     </div>
