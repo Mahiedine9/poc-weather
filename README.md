@@ -13,6 +13,7 @@ This project is a weather application built with React and TypeScript that displ
 - Responsive design for both PC and smartphones.
 - Handles device location changes.
 - Displays day/night specific styles based on the time of day.
+- **Search functionality** to view weather for any city.
 
 ## Stack
 
