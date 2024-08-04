@@ -14,6 +14,9 @@ interface WeatherCardProps {
   windSpeed: number;
   sunrise: number;
   sunset: number;
+  city: string;
+  handleCityChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSearch: () => void;
 }
 
 const WeatherCard: React.FC<WeatherCardProps> = ({
@@ -28,6 +31,9 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
   windSpeed,
   sunrise,
   sunset,
+  city,
+  handleCityChange,
+  handleSearch
 }) => {
   const weatherClass = weatherCondition.toLowerCase();
 
@@ -37,17 +43,26 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
 
   return (
     <div className={`weather-card ${weatherClass} ${isDaytime ? 'daytime' : 'nighttime'}`}>
+      <div className="searchBox">
+        <input
+          type="text"
+          className="searchInput"
+          value={city}
+          onChange={handleCityChange}
+          placeholder="Enter city name"
+        />
+        <button className="searchButton" onClick={handleSearch}>
+          <span className="lnr lnr-magnifier"></span>
+        </button>
+      </div>
       <div className="top">
         <div className="wrapper">
-          <div className="mynav">
-            <a href="#"><span className="lnr lnr-cog"></span></a>
-          </div>
           <h1 className="heading">{heading}</h1>
           <h3 className="location">{location}</h3>
           <p className="temp">
             <span className="temp-value">{temperature}</span>
             <span className="deg">°</span>
-            <a href="#"><span className="temp-type">C</span></a>
+            <a><span className="temp-type">C</span></a>
           </p>
         </div>
       </div>
